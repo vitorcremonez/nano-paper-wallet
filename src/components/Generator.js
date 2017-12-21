@@ -21,7 +21,7 @@ class Generator extends Component {
                         <Icon>lock</Icon>
                     </Input>
                 </Row>
-                <Button waves='light' className="cyan">
+                <Button waves='light' className="cyan" onClick={() => alert("This function will be available soon!")}>
                     <Icon left>note_add</Icon>
                     Generate your <b>paper wallet</b>
                 </Button>
