@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced29c9d-d98a-4538-a23e-9111cf3cc6d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/wallet_texture.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/PaperWalletExample.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/styles/app_shell.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/styles/footer.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AppShell.js" afterPath="$PROJECT_DIR$/src/components/AppShell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Footer.js" afterPath="$PROJECT_DIR$/src/components/Footer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Generator.js" afterPath="$PROJECT_DIR$/src/components/Generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PaperWalletExample.js" afterPath="$PROJECT_DIR$/src/components/PaperWalletExample.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,12 +55,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaperWalletExample.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PaperWalletExample.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PaperWalletExample.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="20" column="86" lean-forward="false" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -79,7 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -91,6 +99,7 @@
         <option value="$PROJECT_DIR$/src/components/Generator.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/PaperWalletExample.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -298,12 +307,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513822582250</updated>
-      <workItem from="1513822585351" duration="6057000" />
+      <workItem from="1513822585351" duration="7175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6057000" />
+    <option name="totallyTimeSpent" value="7175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -340,17 +349,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -436,7 +434,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -483,9 +481,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PaperWalletExample.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="20" column="86" lean-forward="false" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
