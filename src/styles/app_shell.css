@@ -1,0 +1,9 @@
+.app-shell-header{
+  background-image: url(../assets/images/wallet_texture.jpg);
+  background-size: contain;
+  color: gray;
+}
+
+.app-shell-content{
+
+}
