@@ -1,7 +1,6 @@
 .paper-wallet {
 	width: 1000px;
 	height: 453px;
-	background-image: url('../assets/images/art.jpg');
 	background-size: contain;
 	position: relative;
 }

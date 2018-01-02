@@ -19,45 +19,20 @@ class Generator extends Component {
         };
     }
 
+    printWalletPaper() {
+        alert("print");
+        window.print();
+    }
+
     renderPaperWallet() {
-
         return (
-            <PaperWallet publicKey={this.state.public_key} seed={this.state.seed} />
-        );
-
-        return (
-            <div style={{backgroundColor: "#AAA"}}>
-                <div>
-                    <b>Public Key:</b>
-                </div>
-                <div>
-                    <QRCode
-                        bgColor="#FFFFFF"
-                        fgColor="#000000"
-                        level="Q"
-                        style={{ width: 128 }}
-                        value={ this.state.public_key }
-                    />
-                </div>
-                <div>
-                    { this.state.public_key }
-                </div>
-
-                <div>
-                    <b>Seed:</b>
-                </div>
-                <div>
-                    <QRCode
-                        bgColor="#FFFFFF"
-                        fgColor="#000000"
-                        level="Q"
-                        style={{ width: 128 }}
-                        value={ this.state.seed }
-                    />
-                </div>
-                <div>
-                    { this.state.seed }
-                </div>
+            <div className="center-align">
+                <PaperWallet publicKey={this.state.public_key} seed={this.state.seed} />
+                <br/>
+                <Button waves='light' className="cyan" onClick={() => this.printWalletPaper()}>
+                    <Icon left>print</Icon>
+                    Print your paper wallet
+                </Button>
             </div>
         );
     }
