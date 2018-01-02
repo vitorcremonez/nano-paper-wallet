@@ -8,6 +8,7 @@ import {
 import { QRCode } from 'react-qr-svg';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import PaperWallet from "./PaperWallet";
 
 class Generator extends Component {
     constructor(props) {
@@ -19,6 +20,11 @@ class Generator extends Component {
     }
 
     renderPaperWallet() {
+
+        return (
+            <PaperWallet publicKey={this.state.public_key} seed={this.state.seed} />
+        );
+
         return (
             <div style={{backgroundColor: "#AAA"}}>
                 <div>

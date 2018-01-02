@@ -1,0 +1,52 @@
+.paper-wallet {
+	width: 1000px;
+	height: 453px;
+	background-image: url('../assets/images/art.jpg');
+	background-size: contain;
+	position: relative;
+}
+
+.paper-wallet .public-key-qr-code {
+	width: 143px;
+	height: 143px;
+	position: absolute;
+	left: 216px;
+	bottom: 74px;
+	padding: 10px;
+}
+
+.paper-wallet .public-key-code {
+	line-height: 18px;
+	font-size: 16px;
+	width: 320px;
+	height: 50px;
+	padding: 5px;
+	font-weight: bold;
+	position: absolute;
+	left: 32px;
+	bottom: 14px;
+	word-break: break-all;
+}
+
+.paper-wallet .seed-qr-code {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 616px;
+	bottom: 77px;
+	padding: 5px;
+}
+
+.paper-wallet .seed-code {
+	line-height: 14px;
+	font-size: 12px;
+	width: 210px;
+	height: 50px;
+	padding: 5px;
+	font-weight: bold;
+	position: absolute;
+	left: 495px;
+	bottom: 14px;
+	word-break: break-all;
+
+}
