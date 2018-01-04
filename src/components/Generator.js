@@ -5,7 +5,6 @@ import {
     Row,
     Input,
 } from 'react-materialize';
-import { QRCode } from 'react-qr-svg';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import PaperWallet from "./PaperWallet";

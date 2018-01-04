@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { QRCode } from 'react-qr-svg';
 import '../styles/paper_wallet.css';
 import Art from '../assets/images/art.jpg';
+import TemplatePrint from 'react-print';
 
 class PaperWallet extends Component {
-    render() {
+    renderPaperWallet() {
         return (
             <div className="paper-wallet">
-                <img src={ Art } width={1000} />
+                <img src={ Art } width={1000}/>
                 <div className="public-key-code">
                     { this.props.publicKey }
                 </div>
@@ -33,6 +35,16 @@ class PaperWallet extends Component {
                 </div>
             </div>
         );
+    }
+
+    render() {
+        ReactDOM.render(
+            <TemplatePrint>
+                { this.renderPaperWallet() }
+            </TemplatePrint>,
+            document.getElementById('print-mount')
+        );
+        return this.renderPaperWallet();
     }
 }
 

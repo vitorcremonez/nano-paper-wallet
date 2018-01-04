@@ -25,6 +25,7 @@
 	left: 32px;
 	bottom: 14px;
 	word-break: break-all;
+	text-align: center;
 }
 
 .paper-wallet .seed-qr-code {
@@ -47,5 +48,5 @@
 	left: 495px;
 	bottom: 14px;
 	word-break: break-all;
-
+	text-align: center;
 }
