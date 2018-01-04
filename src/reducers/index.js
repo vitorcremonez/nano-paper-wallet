@@ -4,8 +4,10 @@ import {
 import {
     combineReducers,
 } from 'redux';
+import ArtsReducer from './ArtsReducer';
 
 const rootReducer = combineReducers({
+    arts: ArtsReducer,
     form: formReducer,
 });
 

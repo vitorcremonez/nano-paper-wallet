@@ -19,7 +19,6 @@ class Generator extends Component {
     }
 
     printWalletPaper() {
-        alert("print");
         window.print();
     }
 
