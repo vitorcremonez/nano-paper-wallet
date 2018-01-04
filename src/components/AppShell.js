@@ -8,7 +8,9 @@ class AppShell extends Component {
         return (
             <div className="center">
                 <div className="app-shell-header" style={{padding: 32}}>
-                    <img src={Logo} width={300} />
+                    <a href="/">
+                        <img src={Logo} width={300} />
+                    </a>
                     <div className="gray">
                         Paper Wallet Generator
                     </div>

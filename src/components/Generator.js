@@ -5,7 +5,7 @@ import {
     Row,
     Input,
 } from 'react-materialize';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, change } from 'redux-form';
 import { connect } from 'react-redux';
 import PaperWallet from "./PaperWallet";
 
@@ -14,12 +14,9 @@ class Generator extends Component {
         super(props);
         this.state = {
             public_key: null,
+            account: null,
             seed: null,
         };
-    }
-
-    printWalletPaper() {
-        window.print();
     }
 
     renderPaperWallet() {
@@ -27,13 +24,16 @@ class Generator extends Component {
             <div className="center-align">
                 <PaperWallet publicKey={this.state.public_key} seed={this.state.seed} />
                 <br/>
-                <Button waves='light' className="cyan" onClick={() => this.printWalletPaper()}>
-                    <Icon left>print</Icon>
-                    Print your paper wallet
-                </Button>
+                <div>
+                    <Button waves='light' className="cyan" onClick={() => window.print()}>
+                        <Icon left>print</Icon>
+                        Print your paper wallet
+                    </Button>
+                </div>
             </div>
         );
     }
+
 
     onSubmit(values) {
         console.log(values);
@@ -44,6 +44,7 @@ class Generator extends Component {
     }
 
     renderInput(field){
+        console.log(field);
         return (
             <Row>
                 <Input {...field} {...field.input} {...field.meta}>
@@ -53,6 +54,13 @@ class Generator extends Component {
         );
     }
 
+    generateWallet(event) {
+        this.props.changeFieldValue('public_key', 'public_key');
+        this.props.changeFieldValue('account', 'account');
+        this.props.changeFieldValue('seed', 'seed');
+        event.preventDefault();
+    }
+
     renderInputForm() {
         return (
             <div>
@@ -60,9 +68,18 @@ class Generator extends Component {
                     <Field
                         name="public_key"
                         type="text"
+                        icon="call_received"
+                        s={12}
+                        label="Address"
+                        validade={true}
+                        component={this.renderInput}
+                    />
+                    <Field
+                        name="account"
+                        type="text"
                         icon="account_balance_wallet"
                         s={12}
-                        label="Public account key"
+                        label="Account"
                         validade={true}
                         component={this.renderInput}
                     />
@@ -75,10 +92,23 @@ class Generator extends Component {
                         validade={true}
                         component={this.renderInput}
                     />
-                    <Button waves='light' className="cyan">
-                        <Icon left>note_add</Icon>
-                        Generate your <b>paper wallet</b>
-                    </Button>
+                    <div>
+                        <Button waves='light' className="red" onClick={(event) => this.generateWallet(event)}>
+                            <Icon left>gesture</Icon>
+                            Generate your wallet now!
+                        </Button>
+                        <br/>
+                        <div style={{color: "#AAA"}}>
+                        (Address / Account / Seed)
+                        </div>
+                    </div>
+                    <br/>
+                    <div>
+                        <Button waves='light' className="cyan">
+                            <Icon left>note_add</Icon>
+                            Create your <b>paper wallet</b>
+                        </Button>
+                    </div>
                 </form>
             </div>
         );
@@ -92,9 +122,16 @@ class Generator extends Component {
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        changeFieldValue: function(field, value) {
+            dispatch(change('generator', field, value))
+        }
+    }
+}
 
 export default reduxForm({
-    form: 'Generator'
+    form: 'generator'
 })(
-    connect(null)(Generator)
+    connect(null, mapDispatchToProps)(Generator)
 );

@@ -7,7 +7,7 @@
 }
 
 .paper-wallet .public-key-qr-code {
-	background-color: blue;
+	background-color: white;
 	position: absolute;
 	padding: 10px;
 }
@@ -23,7 +23,7 @@
 }
 
 .paper-wallet .seed-qr-code {
-	background-color: red;
+	background-color: white;
 	position: absolute;
 	padding: 5px;
 }
