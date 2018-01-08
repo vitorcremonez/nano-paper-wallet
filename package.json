@@ -6,6 +6,7 @@
   "dependencies": {
     "blake2b": "^2.1.2",
     "blakejs": "^1.1.0",
+    "gh-pages": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-materialize": "^1.1.2",
