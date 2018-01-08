@@ -186,7 +186,7 @@ class RaiBlocksGenerator {
     }
 
     generateSeed(entropy = null) {
-        return "0000000000000000000000000000000000000000000000000000000000000000";
+        return uint8_hex(nacl.randomBytes(32));
     }
 
     generateAccountAddress(seed, accountIndex = 0) {
