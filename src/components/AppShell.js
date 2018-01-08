@@ -12,7 +12,7 @@ class AppShell extends Component {
                         <img src={Logo} width={300} />
                     </a>
                     <div className="gray">
-                        Paper Wallet Generator
+                        Paper Wallet Generator v1.0.0
                     </div>
                 </div>
                 <div className="app-shell-content col s6">
