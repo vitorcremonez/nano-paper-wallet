@@ -1,5 +1,6 @@
 {
   "name": "raiblocks-paper-wallet",
+  "homepage": "https://vitorcremonez.github.io/raiblocks-paper-wallet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
