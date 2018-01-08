@@ -2,6 +2,7 @@
 
 # PhpStorm
 .idea/**/workspace.xml
+.idea/workspace.xml
 
 # dependencies
 /node_modules
