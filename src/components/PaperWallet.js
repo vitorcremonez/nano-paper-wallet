@@ -56,6 +56,22 @@ class PaperWallet extends Component {
                 }}>
                     { this.props.seed }
                 </div>
+                <div className="infos">
+                    <div>
+                        <b>RaiBlocks Paper Wallet</b>
+                    </div>
+                    <div className="left-align" style={{fontSize: 11}}>
+                        <div>- Do not reveal the private key and seed to anyone.</div>
+                        <div>- Verify your balance by searching for the public address using a service such as raiblocks.net</div>
+                        <div>- To withdraw and receive the funds sync the paper wallet with your seed into official desktop wallet (Make sure wallet is open and all blocks are downloaded).</div>
+                        <br/>
+                        <div className="responsive-text">
+                            Private key: { this.props.privateKey }
+                        </div>
+                        <br/>
+                        <div>Notes:</div>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -37,3 +37,12 @@
 	word-break: break-all;
 	text-align: center;
 }
+
+.infos {
+	width: 240px;
+	height: 409px;
+	padding: 10px;
+	position: absolute;
+	left: 745px;
+	bottom: 12px;
+}
