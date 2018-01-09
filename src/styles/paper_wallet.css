@@ -37,3 +37,8 @@
 	word-break: break-all;
 	text-align: center;
 }
+
+.infos {
+	padding: 10px;
+	position: absolute;
+}

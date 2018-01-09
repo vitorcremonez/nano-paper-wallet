@@ -31,6 +31,12 @@ const Arts = {
             left: 616,
             bottom: 77,
         },
+        infos: {
+            width: 240,
+            height: 409,
+            left: 745,
+            bottom: 12,
+        },
     }
 };
 

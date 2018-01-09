@@ -19,7 +19,7 @@ class Generator extends Component {
         super(props);
         this.state = {
             public_key: null,
-            account: null,
+            private_key: null,
             seed: null,
         };
     }
@@ -27,7 +27,7 @@ class Generator extends Component {
     renderPaperWallet() {
         return (
             <div className="center-align">
-                <PaperWallet publicKey={this.state.public_key} seed={this.state.seed} />
+                <PaperWallet publicKey={this.state.public_key} privateKey={this.state.private_key} seed={this.state.seed} />
                 <br/>
                 <div>
                     <Button waves='light' className="cyan" onClick={() => window.print()}>
@@ -41,8 +41,14 @@ class Generator extends Component {
 
 
     onSubmit(values) {
+        let raiBlocksGenerator = new RaiBlocksGenerator();
+        if(!raiBlocksGenerator._isValidSeed(values.seed)) {
+            alert("This is not a valid SEED!");
+            return null;
+        }
         this.setState({
             public_key: values.public_key,
+            private_key: values.private_key,
             seed: values.seed,
         });
     }
@@ -58,13 +64,13 @@ class Generator extends Component {
     }
 
     generateWallet(event) {
-        let raiBlocksGenerator = new RaiBlocksGenerator(1,2);
+        let raiBlocksGenerator = new RaiBlocksGenerator();
         const seed = raiBlocksGenerator.generateSeed('48656c6c6f20776f726c64');
-        const identifier = raiBlocksGenerator.generateIndentifier(seed) ;
-        const account_address = raiBlocksGenerator.generateAccountAddress(seed);
+        const private_key = raiBlocksGenerator.generateIndentifier(seed) ;
+        const public_key = raiBlocksGenerator.generateAccountAddress(seed);
 
-        this.props.changeFieldValue('public_key', account_address);
-        this.props.changeFieldValue('account', identifier);
+        this.props.changeFieldValue('public_key', public_key);
+        this.props.changeFieldValue('private_key', private_key);
         this.props.changeFieldValue('seed', seed);
 
         event.preventDefault();
@@ -85,7 +91,7 @@ class Generator extends Component {
                         component={this.renderInput}
                     />
                     <Field
-                        name="account"
+                        name="private_key"
                         type="text"
                         icon="account_balance_wallet"
                         s={12}
@@ -127,7 +133,7 @@ class Generator extends Component {
     }
 
     render() {
-        if(this.state.public_key && this.state.seed){
+        if(this.state.public_key && this.state.private_key && this.state.seed){
             return this.renderPaperWallet();
         }
         return this.renderInputForm();

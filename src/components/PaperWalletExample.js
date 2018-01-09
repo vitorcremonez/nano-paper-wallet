@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import PaperWallet from '../assets/images/paper_wallet.jpg';
-import Art from '../assets/images/art.jpg';
+import SampleArt from '../assets/images/sample.jpg';
+
 import 'react-photoswipe/lib/photoswipe.css';
 import {PhotoSwipeGallery} from 'react-photoswipe';
 
 class PaperWalletExample extends Component {
     items = [
         {
-            src: Art,
-            thumbnail: Art,
+            src: SampleArt,
+            thumbnail: SampleArt,
             w: 4940,
             h: 2239,
             title: 'RaiBlocks Paper Wallet Example'
@@ -18,7 +19,7 @@ class PaperWalletExample extends Component {
     getThumbnailContent = (item) => {
         console.log(PaperWallet);
         return (
-            <img src={item.thumbnail} width={494} height={223} style={{cursor:"pointer"}}/>
+            <img src={item.thumbnail} style={{cursor:"pointer", maxWidth: 500, width: "100%"}}/>
         );
     };
 

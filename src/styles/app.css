@@ -1,3 +1,10 @@
 .bg-lightsmoke{
 	background-color: #EEE;
 }
+
+.responsive-text {
+	word-wrap: break-word;
+	width: 100%;
+	table-layout: fixed;
+	display: table;
+}
