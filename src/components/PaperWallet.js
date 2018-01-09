@@ -56,7 +56,12 @@ class PaperWallet extends Component {
                 }}>
                     { this.props.seed }
                 </div>
-                <div className="infos">
+                <div className="infos" style={{
+                    width: this.props.arts.default.infos.width,
+                    height: this.props.arts.default.infos.height,
+                    left: this.props.arts.default.infos.left,
+                    bottom: this.props.arts.default.infos.bottom
+                }}>
                     <div>
                         <b>RaiBlocks Paper Wallet</b>
                     </div>
