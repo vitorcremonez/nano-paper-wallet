@@ -41,6 +41,11 @@ class Generator extends Component {
 
 
     onSubmit(values) {
+        let raiBlocksGenerator = new RaiBlocksGenerator();
+        if(!raiBlocksGenerator._isValidSeed(values.seed)) {
+            alert("This is not a valid SEED!");
+            return null;
+        }
         this.setState({
             public_key: values.public_key,
             private_key: values.private_key,
@@ -59,7 +64,7 @@ class Generator extends Component {
     }
 
     generateWallet(event) {
-        let raiBlocksGenerator = new RaiBlocksGenerator(1,2);
+        let raiBlocksGenerator = new RaiBlocksGenerator();
         const seed = raiBlocksGenerator.generateSeed('48656c6c6f20776f726c64');
         const private_key = raiBlocksGenerator.generateIndentifier(seed) ;
         const public_key = raiBlocksGenerator.generateAccountAddress(seed);

@@ -24,7 +24,7 @@ class Tutorial extends Component {
                     <li>Access Paper Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                     <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
                     <li>Click in "<Icon>gesture</Icon> Generate your wallet now!".</li>
-                    <li>Move cursor around screen <Icon>gesture</Icon> to help generate a good randomic entropy.</li>
+                    <li style={{display:"none"}}>Move cursor around screen <Icon>gesture</Icon> to help generate a good randomic entropy. (SOON)</li>
                     <li>Click in "<Icon>note_add</Icon> Create your paper wallet".</li>
                     <li>Click in "<Icon>print</Icon> Print your paper wallet".</li>
                     <li>Close <Icon>close</Icon> the browser and restart computer.</li>

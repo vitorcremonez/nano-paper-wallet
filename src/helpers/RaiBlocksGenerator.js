@@ -164,7 +164,7 @@ class RaiBlocksGenerator {
 
     _generatePair(seed, accountIndex = 0) {
         if (!this._isValidSeed(seed)) {
-            alert("That is not a valid SEED!");
+            alert("This is not a valid SEED!");
             return null;
         }
 
