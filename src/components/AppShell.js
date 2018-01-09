@@ -8,7 +8,7 @@ class AppShell extends Component {
         return (
             <div className="center">
                 <div className="app-shell-header" style={{padding: 32}}>
-                    <a href="/">
+                    <a href="./">
                         <img src={Logo} width={300} />
                     </a>
                     <div className="gray">
