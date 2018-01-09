@@ -1,4 +1,4 @@
-<img src="/src/assets/images/raiblocks-logo.png" width="200"/>
+<img src="/src/assets/images/raiblocks_logo.png" width="200"/>
 
 ## RaiBlocks Paper Wallet Generator
 
