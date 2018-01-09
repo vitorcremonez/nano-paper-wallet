@@ -1,10 +1,10 @@
-![alt text](/src/assets/images/paper_wallet.jpg)
-
-<img src="/src/assets/images/paper_wallet.jpg" width="165"/>
+<img src="/src/assets/images/raiblocks-logo.png" width="200"/>
 
 ## RaiBlocks Paper Wallet Generator
 
 Client side paper wallet generator for RaiBlocks account.
+
+<img src="/src/assets/images/paper_wallet.jpg" width="165"/>
 
 ## Demo
 
