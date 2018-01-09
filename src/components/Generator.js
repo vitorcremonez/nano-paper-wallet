@@ -79,7 +79,7 @@ class Generator extends Component {
                         type="text"
                         icon="call_received"
                         s={12}
-                        label="Account Address"
+                        label="Account Address (Public Key)"
                         placeholder={"xrb_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"}
                         validade={true}
                         component={this.renderInput}
@@ -89,7 +89,7 @@ class Generator extends Component {
                         type="text"
                         icon="account_balance_wallet"
                         s={12}
-                        label="Account Identifier"
+                        label="Account Identifier (Private Key)"
                         placeholder={"9F0E444C69F77A49BD0BE89DB92C38FE713E0963165CCA12FAF5712D7657120F"}
                         validade={true}
                         component={this.renderInput}
@@ -99,7 +99,7 @@ class Generator extends Component {
                         type="text"
                         icon="lock"
                         s={12}
-                        label="Seed"
+                        label="Seed (Top Secret)"
                         placeholder={"0000000000000000000000000000000000000000000000000000000000000000"}
                         validade={true}
                         component={this.renderInput}

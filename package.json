@@ -1,10 +1,12 @@
 {
   "name": "raiblocks-paper-wallet",
+  "homepage": "https://vitorcremonez.github.io/raiblocks-paper-wallet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "blake2b": "^2.1.2",
     "blakejs": "^1.1.0",
+    "gh-pages": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-materialize": "^1.1.2",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "postcss-loader": "^2.0.9"
