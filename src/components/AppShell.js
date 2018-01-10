@@ -4,6 +4,13 @@ import Logo from '../assets/images/raiblocks_logo.png';
 import '../styles/app_shell.css';
 
 class AppShell extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            version: "1.0.2",
+        };
+    }
+
     render() {
         return (
             <div className="center">
@@ -12,7 +19,7 @@ class AppShell extends Component {
                         <img src={Logo} width={300} />
                     </a>
                     <div className="gray">
-                        Paper Wallet Generator v1.0.1
+                        Paper Wallet Generator v{this.state.version}
                     </div>
                 </div>
                 <div className="app-shell-content col s6">
