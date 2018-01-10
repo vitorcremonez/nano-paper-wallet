@@ -65,7 +65,7 @@ class Generator extends Component {
 
     generateWallet(event) {
         let raiBlocksGenerator = new RaiBlocksGenerator();
-        const seed = raiBlocksGenerator.generateSeed('48656c6c6f20776f726c64');
+        const seed = raiBlocksGenerator.generateSeed();
         const private_key = raiBlocksGenerator.generateIndentifier(seed) ;
         const public_key = raiBlocksGenerator.generateAccountAddress(seed);
 
