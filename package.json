@@ -17,7 +17,7 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-form": "^7.2.0",
-    "tweetnacl": "git+https://github.com/jaimehgb/tweetnacl-js.git"
+    "tweetnacl": "git+https://github.com/jaimehgb/tweetnacl-js.git#ef9ea5fd95c3ca98128877c58e40ef1a711421ef"
   },
   "scripts": {
     "start": "react-scripts start",
