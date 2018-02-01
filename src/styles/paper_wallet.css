@@ -29,8 +29,6 @@
 }
 
 .paper-wallet .seed-code {
-	line-height: 14px;
-	font-size: 12px;
 	padding: 5px;
 	font-weight: bold;
 	position: absolute;

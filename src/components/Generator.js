@@ -14,6 +14,9 @@ import { connect } from 'react-redux';
 import PaperWallet from "./PaperWallet";
 import RaiBlocksGenerator from '../helpers/RaiBlocksGenerator';
 
+import nanoDarkBlue from '../assets/images/arts/nano-dark-blue.jpg';
+import raiblocks from '../assets/images/arts/raiblocks.jpg';
+
 class Generator extends Component {
     constructor(props) {
         super(props);
@@ -21,13 +24,19 @@ class Generator extends Component {
             public_key: null,
             private_key: null,
             seed: null,
+            art: "nanoDarkBlue",
         };
     }
 
     renderPaperWallet() {
         return (
             <div className="center-align">
-                <PaperWallet publicKey={this.state.public_key} privateKey={this.state.private_key} seed={this.state.seed} />
+                <PaperWallet publicKey={this.state.public_key} privateKey={this.state.private_key} seed={this.state.seed} art={this.state.art} />
+                <br/>
+                <div>
+                    <img src={nanoDarkBlue} width={100} onClick={() => this.setState({art:"nanoDarkBlue"})} className={this.state.art === "nanoDarkBlue" ? "artSelected" : "artNotSelected"}/>
+                    <img src={raiblocks} width={100} onClick={() => this.setState({art:"raiblocks"})} className={this.state.art === "raiblocks" ? "artSelected" : "artNotSelected"}/>
+                </div>
                 <br/>
                 <div>
                     <Button waves='light' className="cyan" onClick={() => window.print()}>

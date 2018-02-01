@@ -35,3 +35,18 @@
 	background-position-y: 50%;
 	background-repeat: no-repeat;
 }
+
+.artSelected {
+	cursor: pointer;
+	border: 4px solid dodgerblue;
+	border-radius: 2px;
+}
+
+.artNotSelected {
+	cursor: pointer;
+	border: 4px solid transparent;
+	border-radius: 2px;
+}
+.artNotSelected:hover {
+	border: 4px solid dodgerblue;
+}

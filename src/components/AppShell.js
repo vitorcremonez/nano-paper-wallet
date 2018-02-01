@@ -14,7 +14,7 @@ class AppShell extends Component {
     render() {
         return (
             <div className="center">
-                <div className="app-shell-header bg-nano-blue" style={{padding: 64}}>
+                <div className="app-shell-header bg-nano-blue bg-logo-dark" style={{padding: 64}}>
                     <a href="./">
                         <img src={Logo} width={300} />
                     </a>
