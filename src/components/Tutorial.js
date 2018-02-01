@@ -7,8 +7,8 @@ class Tutorial extends Component {
     render() {
         return (
             <div className="bg-nano-blue bg-logo-dark" style={{color: "white", padding: 16}}>
-                <h4>Make your Paper Wallet to Keep Your RaiBlocks and Keys Safe.</h4>
-                <h5 className="color-nano-gray">Follow these simple steps to generate your raiblocks paper wallet in a safe place.</h5>
+                <h4>Make your Paper Wallet to Keep Your Nanos and Keys Safe.</h4>
+                <h5 className="color-nano-gray">Follow these simple steps to generate your Nano paper wallet in a safe place.</h5>
                 <h6 className="color-nano-gray">
                     Client side generator. All functions of paper wallet generator is runned in client side to help keep your new paper wallet far from another people.
                 </h6>

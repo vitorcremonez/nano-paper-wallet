@@ -10,9 +10,6 @@ Client side paper wallet generator for Nano account.
 
 https://vitorcremonez.github.io/nano-paper-wallet/
 
-<img src="https://i.imgur.com/K3HHi3g.gif"/>
-
-
 ## Instalation
 
 Clone the repository:

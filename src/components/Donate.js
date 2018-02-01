@@ -13,7 +13,7 @@ class Donate extends Component {
         return (
             <div className="bg-nano-blue color-white responsive-text bg-logo-dark" style={{padding: 32}}>
                 <h6>
-                    <b>Donate XRB and help us to improve the paper wallet!</b>
+                    <b>Donate Nano and help us to improve the paper wallet!</b>
                 </h6>
                 <br/>
                 <div style={{padding: 10, background: "white", width: 128, margin: "auto"}}>
