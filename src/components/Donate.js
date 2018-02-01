@@ -11,7 +11,7 @@ class Donate extends Component {
 
     render() {
         return (
-            <div className="bg-lightsmoke responsive-text" style={{padding: 32}}>
+            <div className="bg-nano-blue color-white responsive-text bg-logo-dark" style={{padding: 32}}>
                 <h6>
                     <b>Donate XRB and help us to improve the paper wallet!</b>
                 </h6>

@@ -11,11 +11,9 @@ class App extends Component {
         return (
             <AppShell>
                 <Generator/>
-                <br/><br/><br/>
-                <Tutorial/>
-                <br/><br/><br/>
-                <PaperWalletExample/>
                 <br/>
+                <Tutorial/>
+                <PaperWalletExample/>
                 <Donate/>
             </AppShell>
         );

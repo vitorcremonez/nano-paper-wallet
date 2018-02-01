@@ -9,24 +9,27 @@ class PaperWallet extends Component {
     renderPaperWallet() {
         return (
             <div className="paper-wallet">
-                <img src={ this.props.arts.default.art }
-                     width={ this.props.arts.default.size.width }
-                     height={ this.props.arts.default.size.height }
+                <img src={ this.props.arts[this.props.art].art }
+                     width={ this.props.arts[this.props.art].size.width }
+                     height={ this.props.arts[this.props.art].size.height }
                 />
 
                 <div className="public-key-code" style={{
-                    width: this.props.arts.default.public_key.width,
-                    height: this.props.arts.default.public_key.height,
-                    left: this.props.arts.default.public_key.left,
-                    bottom: this.props.arts.default.public_key.bottom,
+                    width: this.props.arts[this.props.art].public_key.width,
+                    height: this.props.arts[this.props.art].public_key.height,
+                    left: this.props.arts[this.props.art].public_key.left,
+                    bottom: this.props.arts[this.props.art].public_key.bottom,
+                    color: this.props.arts[this.props.art].public_key.color,
+                    fontSize: this.props.arts[this.props.art].public_key.fontSize,
+                    lineHeight: this.props.arts[this.props.art].public_key.lineHeight,
                 }}>
                     { this.props.publicKey }
                 </div>
                 <div className="public-key-qr-code" style={{
-                    width: this.props.arts.default.public_key_qr.width,
-                    height: this.props.arts.default.public_key_qr.height,
-                    left: this.props.arts.default.public_key_qr.left,
-                    bottom: this.props.arts.default.public_key_qr.bottom,
+                    width: this.props.arts[this.props.art].public_key_qr.width,
+                    height: this.props.arts[this.props.art].public_key_qr.height,
+                    left: this.props.arts[this.props.art].public_key_qr.left,
+                    bottom: this.props.arts[this.props.art].public_key_qr.bottom,
                 }}>
                     <QRCode
                         bgColor="#FFFFFF"
@@ -36,10 +39,10 @@ class PaperWallet extends Component {
                     />
                 </div>
                 <div className="seed-qr-code" style={{
-                    width: this.props.arts.default.seed_qr.width,
-                    height: this.props.arts.default.seed_qr.height,
-                    left: this.props.arts.default.seed_qr.left,
-                    bottom: this.props.arts.default.seed_qr.bottom,
+                    width: this.props.arts[this.props.art].seed_qr.width,
+                    height: this.props.arts[this.props.art].seed_qr.height,
+                    left: this.props.arts[this.props.art].seed_qr.left,
+                    bottom: this.props.arts[this.props.art].seed_qr.bottom,
                 }}>
                     <QRCode
                         bgColor="#FFFFFF"
@@ -49,21 +52,24 @@ class PaperWallet extends Component {
                     />
                 </div>
                 <div className="seed-code" style={{
-                    width: this.props.arts.default.seed.width,
-                    height: this.props.arts.default.seed.height,
-                    left: this.props.arts.default.seed.left,
-                    bottom: this.props.arts.default.seed.bottom
+                    width: this.props.arts[this.props.art].seed.width,
+                    height: this.props.arts[this.props.art].seed.height,
+                    left: this.props.arts[this.props.art].seed.left,
+                    bottom: this.props.arts[this.props.art].seed.bottom,
+                    color: this.props.arts[this.props.art].seed.color,
+                    fontSize: this.props.arts[this.props.art].seed.fontSize,
+                    lineHeight: this.props.arts[this.props.art].seed.lineHeight,
                 }}>
                     { this.props.seed }
                 </div>
                 <div className="infos" style={{
-                    width: this.props.arts.default.infos.width,
-                    height: this.props.arts.default.infos.height,
-                    left: this.props.arts.default.infos.left,
-                    bottom: this.props.arts.default.infos.bottom
+                    width: this.props.arts[this.props.art].infos.width,
+                    height: this.props.arts[this.props.art].infos.height,
+                    left: this.props.arts[this.props.art].infos.left,
+                    bottom: this.props.arts[this.props.art].infos.bottom,
                 }}>
                     <div>
-                        <b>RaiBlocks Paper Wallet</b>
+                        <b>Nano Paper Wallet</b>
                     </div>
                     <div className="left-align" style={{fontSize: 11}}>
                         <div>- Do not reveal the private key and seed to anyone.</div>
