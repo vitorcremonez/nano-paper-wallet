@@ -111,7 +111,7 @@ class Generator extends Component {
                         component={this.renderInput}
                     />
                     <div>
-                        <Button waves='light' className="red" onClick={(event) => this.generateWallet(event)}>
+                        <Button waves='light' className="orange" onClick={(event) => this.generateWallet(event)}>
                             <Icon left>gesture</Icon>
                             Generate your wallet now!
                         </Button>
@@ -132,11 +132,22 @@ class Generator extends Component {
         );
     }
 
-    render() {
+    renderGenerator() {
         if(this.state.public_key && this.state.private_key && this.state.seed){
             return this.renderPaperWallet();
+        } else {
+            return this.renderInputForm();
         }
-        return this.renderInputForm();
+    }
+
+    render() {
+        return(
+            <div style={{padding: 16}}>
+                { this.renderGenerator() }
+            </div>
+        );
+
+
     }
 }
 

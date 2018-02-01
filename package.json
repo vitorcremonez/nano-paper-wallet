@@ -1,6 +1,6 @@
 {
-  "name": "raiblocks-paper-wallet",
-  "homepage": "https://vitorcremonez.github.io/raiblocks-paper-wallet",
+  "name": "nano-paper-wallet",
+  "homepage": "https://vitorcremonez.github.io/nano-paper-wallet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

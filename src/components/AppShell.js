@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Footer from "./Footer";
-import Logo from '../assets/images/raiblocks_logo.png';
+import Logo from '../assets/images/nano_logo.svg';
 import '../styles/app_shell.css';
 
 class AppShell extends Component {
@@ -14,10 +14,11 @@ class AppShell extends Component {
     render() {
         return (
             <div className="center">
-                <div className="app-shell-header" style={{padding: 32}}>
+                <div className="app-shell-header bg-nano-blue" style={{padding: 64}}>
                     <a href="./">
                         <img src={Logo} width={300} />
                     </a>
+                    <br/><br/>
                     <div className="gray">
                         Paper Wallet Generator v{this.state.version}
                     </div>

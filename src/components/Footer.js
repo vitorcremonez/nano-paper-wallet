@@ -4,11 +4,11 @@ import '../styles/footer.css';
 class Footer extends Component {
     render() {
         return (
-            <div className="footer">
+            <div className="footer bg-nano-blue">
                 <div>
                     Fork us on:
                     &nbsp;
-                    <a href="https://github.com/vitorcremonez/raiblocks-paper-wallet">
+                    <a href="https://github.com/vitorcremonez/nano-paper-wallet">
                         Github
                     </a>
                 </div>

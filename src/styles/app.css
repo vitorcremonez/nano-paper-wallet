@@ -1,10 +1,37 @@
 .bg-lightsmoke{
 	background-color: #EEE;
 }
+.bg-nano-blue {
+	background-color: #0f1121 !important;
+}
+
+.color-white {
+	color: white;
+}
+
+.color-nano-gray{
+	color: #646d78;
+}
+
+.p-16{
+	padding: 16px;
+}
+
+.p-32{
+	padding: 32px;
+}
 
 .responsive-text {
 	word-wrap: break-word;
 	width: 100%;
 	table-layout: fixed;
 	display: table;
+}
+
+.bg-logo-dark{
+	background: url(../assets/images/bg-logo-dark.png);
+	background-size: auto 90%;
+	background-position-x: right;
+	background-position-y: 50%;
+	background-repeat: no-repeat;
 }
