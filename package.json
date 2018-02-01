@@ -1,7 +1,7 @@
 {
   "name": "nano-paper-wallet",
   "homepage": "https://vitorcremonez.github.io/nano-paper-wallet",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "blake2b": "^2.1.2",
