@@ -69,7 +69,7 @@ class PaperWallet extends Component {
                     bottom: this.props.arts[this.props.art].infos.bottom,
                 }}>
                     <div>
-                        <b>RaiBlocks Paper Wallet</b>
+                        <b>Nano Paper Wallet</b>
                     </div>
                     <div className="left-align" style={{fontSize: 11}}>
                         <div>- Do not reveal the private key and seed to anyone.</div>
