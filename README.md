@@ -1,4 +1,4 @@
-<img src="/src/assets/images/nano_logo.svg" width="200"/>
+<img src="https://i.imgur.com/TnPBuMt.png"/>
 
 ## Nano Paper Wallet Generator
 
@@ -9,6 +9,9 @@ Client side paper wallet generator for Nano account.
 ## Demo
 
 https://vitorcremonez.github.io/nano-paper-wallet/
+
+<img src="https://i.imgur.com/K3HHi3g.gif"/>
+
 
 ## Instalation
 
