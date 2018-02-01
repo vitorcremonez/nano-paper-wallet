@@ -1,26 +1,26 @@
-<img src="/src/assets/images/raiblocks_logo.png" width="200"/>
+<img src="/src/assets/images/nano_logo.svg" width="200"/>
 
-## RaiBlocks Paper Wallet Generator
+## Nano Paper Wallet Generator
 
-Client side paper wallet generator for RaiBlocks account.
+Client side paper wallet generator for Nano account.
 
 <img src="/src/assets/images/paper_wallet.jpg" width="165"/>
 
 ## Demo
 
-https://vitorcremonez.github.io/raiblocks-paper-wallet/
+https://vitorcremonez.github.io/nano-paper-wallet/
 
 ## Instalation
 
 Clone the repository:
 
 ```sh
-git clone git@github.com:vitorcremonez/raiblocks-paper-wallet.git
+git clone git@github.com:vitorcremonez/nano-paper-wallet.git
 ```
 
 Enter inside directory:
 ```sh
-cd raiblocks-paper-wallet/
+cd nano-paper-wallet/
 ```
 
 
