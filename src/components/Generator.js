@@ -14,9 +14,6 @@ import { connect } from 'react-redux';
 import PaperWallet from "./PaperWallet";
 import RaiBlocksGenerator from '../helpers/RaiBlocksGenerator';
 
-import nanoDarkBlue from '../assets/images/arts/nano-dark-blue.jpg';
-import raiblocks from '../assets/images/arts/raiblocks.jpg';
-
 class Generator extends Component {
     constructor(props) {
         super(props);
@@ -31,11 +28,11 @@ class Generator extends Component {
     renderPaperWallet() {
         return (
             <div className="center-align">
-                <PaperWallet publicKey={this.state.public_key} privateKey={this.state.private_key} seed={this.state.seed} art={this.state.art} />
+                <PaperWallet publicKey={this.state.public_key} privateKey={this.state.private_key} seed={this.state.seed} art={this.props.arts[this.state.art]} />
                 <br/>
                 <div>
-                    <img src={nanoDarkBlue} width={100} onClick={() => this.setState({art:"nanoDarkBlue"})} className={this.state.art === "nanoDarkBlue" ? "artSelected" : "artNotSelected"}/>
-                    <img src={raiblocks} width={100} onClick={() => this.setState({art:"raiblocks"})} className={this.state.art === "raiblocks" ? "artSelected" : "artNotSelected"}/>
+                    <img src={this.props.arts['nanoDarkBlue'].art} width={100} onClick={() => this.setState({art:"nanoDarkBlue"})} className={this.state.art === "nanoDarkBlue" ? "artSelected" : "artNotSelected"}/>
+                    <img src={this.props.arts['raiblocks'].art} width={100} onClick={() => this.setState({art:"raiblocks"})} className={this.state.art === "raiblocks" ? "artSelected" : "artNotSelected"}/>
                 </div>
                 <br/>
                 <div>
@@ -160,6 +157,13 @@ class Generator extends Component {
     }
 }
 
+
+function mapStateToProps(state) {
+    return {
+        arts: state.arts,
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         changeFieldValue: function(field, value) {
@@ -171,5 +175,5 @@ function mapDispatchToProps(dispatch) {
 export default reduxForm({
     form: 'generator'
 })(
-    connect(null, mapDispatchToProps)(Generator)
+    connect(mapStateToProps, mapDispatchToProps)(Generator)
 );

@@ -1,6 +1,23 @@
 import DefaultArt from '../assets/images/arts/raiblocks.jpg';
 import NanoDarkBlue from '../assets/images/arts/nano-dark-blue.jpg';
 
+function base64image(url, callback = null) {
+    let img = new Image();
+    img.src = url;
+    img.onload = () => {
+        let canvas  =  document.createElement( 'canvas' );
+        canvas.setAttribute("width", img.width);
+        canvas.setAttribute("height", img.height);
+
+        let context  =  canvas.getContext( '2d' );
+        context.drawImage( img, 0, 0 );
+        canvas.style.width = "100%";
+        let data = canvas.toDataURL("image/jpeg");
+        callback(data);
+    };
+    return url;
+}
+
 const Arts = {
     "raiblocks": {
         art: DefaultArt,
@@ -89,6 +106,9 @@ const Arts = {
         },
     }
 };
+
+base64image(DefaultArt, (response) => {Arts["raiblocks"].art = response});
+base64image(NanoDarkBlue, (response) => {Arts["nanoDarkBlue"].art = response});
 
 export default function (state = Arts, action) {
     return state;
