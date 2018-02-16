@@ -22,9 +22,9 @@ class Tutorial extends Component {
                 </h6>
                 <div className="color-nano-gray">
                     <ol>
-                        <li>Access Paper Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
+                        <li>Access Paper the Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                         <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
-                        <li>Click in "<Icon>gesture</Icon> Generate your wallet now!".</li>
+                        <li>Click in "<Icon>gesture</Icon> Generate a random wallet now!".</li>
                         <li style={{display:"none"}}>Move cursor around screen <Icon>gesture</Icon> to help generate a good randomic entropy. (SOON)</li>
                         <li>Click in "<Icon>note_add</Icon> Create your paper wallet".</li>
                         <li>Click in "<Icon>print</Icon> Print your paper wallet".</li>
@@ -38,7 +38,7 @@ class Tutorial extends Component {
                 </h6>
                 <div className="color-nano-gray">
                     <ol>
-                        <li>Access Paper Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
+                        <li>Access Paper the Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                         <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
                         <li>Add your <Icon>lock</Icon> Seed, <Icon>account_balance_wallet</Icon> Account and <Icon>call_received</Icon> Public key.</li>
                         <li>Click in "<Icon>note_add</Icon> Create your paper wallet".</li>

@@ -154,8 +154,17 @@ function accountFromHexKey (hex) {
 }
 
 class RaiBlocksGenerator {
+    _isHexadecimal(input) {
+        return (/^[0-9A-F]{1,}$/i.test(input));
+    }
+
+    _is64characters(input) {
+        return input.length === 64;
+    }
+
     _isValidSeed = (seed) => {
-        return (/[0-9A-F]{64}/i.test(seed));
+        if (!seed) return false;
+        return this._isHexadecimal(seed) && this._is64characters(seed);
     };
 
     _isValidAccountIndex = (index) => {
@@ -189,11 +198,11 @@ class RaiBlocksGenerator {
         return uint8_hex(nacl.randomBytes(32));
     }
 
-    generateAccountAddress(seed, accountIndex = 0) {
+    generatePublicKey(seed, accountIndex = 0) {
         return this._generatePair(seed, accountIndex).public_key;
     }
 
-    generateIndentifier(seed, accountIndex = 0) {
+    generatePrivateKey(seed, accountIndex = 0) {
         return this._generatePair(seed, accountIndex).private_key;
     }
 }
