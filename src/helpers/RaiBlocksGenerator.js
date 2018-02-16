@@ -167,8 +167,8 @@ class RaiBlocksGenerator {
         return this._isHexadecimal(seed) && this._is64characters(seed);
     };
 
-    _isValidAccountIndex = (index) => {
-        return !(index < 0 || index >= Math.pow(2,32));
+    _isValidIndexAccount = (index) => {
+        return (index >= 0 && index < Math.pow(2,32));
     };
 
     _generatePair(seed, accountIndex = 0) {
@@ -177,7 +177,7 @@ class RaiBlocksGenerator {
             return null;
         }
 
-        if(!this._isValidAccountIndex(accountIndex)) {
+        if(!this._isValidIndexAccount(accountIndex)) {
             alert("Invalid account index!");
             return null;
         }
@@ -199,11 +199,15 @@ class RaiBlocksGenerator {
     }
 
     generatePublicKey(seed, accountIndex = 0) {
-        return this._generatePair(seed, accountIndex).public_key;
+        let pair = this._generatePair(seed, accountIndex);
+        if (!pair) return null;
+        return pair.public_key;
     }
 
     generatePrivateKey(seed, accountIndex = 0) {
-        return this._generatePair(seed, accountIndex).private_key;
+        let pair = this._generatePair(seed, accountIndex);
+        if (!pair) return null;
+        return pair.private_key;
     }
 }
 

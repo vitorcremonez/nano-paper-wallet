@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Row,
     Input,
@@ -7,22 +7,19 @@ import {
 
 
 class Field extends Component {
-    render(){
+    render() {
         const field = this.props;
-        const { error, warning, touched } = field.meta;
-        console.log(warning);
+        const {error, warning, touched} = field.meta;
         return (
-            <Row>
-                <Input
-                    {...field}
-                    {...field.input}
-                    error={
-                        error ? error : (warning ? warning : null)
-                    }
-                    warning={"asd"}>
-                    <Icon>{field.icon}</Icon>
-                </Input>
-            </Row>
+            <Input
+                {...field}
+                {...field.input}
+                error={
+                    error ? error : (warning ? warning : null)
+                }
+                warning={"asd"}>
+                <Icon>{field.icon}</Icon>
+            </Input>
         );
     }
 }
