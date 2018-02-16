@@ -77,8 +77,9 @@ class PaperWallet extends Component {
                         <div>- To withdraw and receive the funds sync the paper wallet with your seed into official desktop wallet (Make sure wallet is open and all blocks are downloaded).</div>
                         <br/>
                         <div className="responsive-text">
-                            Account Number: { this.props.indexAccount }
+                            Account Number: <b>{ this.props.indexAccount }</b>
                         </div>
+                        <br/>
                         <div className="responsive-text">
                             Private key:<br/>
                             { this.props.privateKey }

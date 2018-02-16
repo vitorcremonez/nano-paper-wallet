@@ -61,6 +61,20 @@ class Generator extends Component {
         );
     }
 
+    renderBlockChainBalanceButton() {
+        if(!this.props.formStates || this.props.formStates.public_key === undefined ) {
+            return null;
+        }
+        return (
+            <div>
+                <a href={'https://raiblocks.net/account/index.php?acc=' + this.props.formStates.public_key} target="_blank">
+                    Check this account balance on the blockchain!
+                </a>
+                <br/>
+                <label>{this.props.formStates.public_key}</label>
+            </div>
+        );
+    }
 
     onSubmit(values) {
         let raiBlocksGenerator = new RaiBlocksGenerator();
@@ -71,37 +85,13 @@ class Generator extends Component {
         this.setState({
             public_key: values.public_key,
             private_key: values.private_key,
-            seed: values.seed,
+            seed: values.seed.toUpperCase(),
             index_account: values.index_account,
         });
     }
 
-    generateWallet(event, seed = null) {
+    generateWallet(seed, indexAccount) {
         let raiBlocksGenerator = new RaiBlocksGenerator();
-        if (!seed) {
-            seed = raiBlocksGenerator.generateSeed();
-            const private_key = raiBlocksGenerator.generatePrivateKey(seed);
-            const public_key = raiBlocksGenerator.generatePublicKey(seed);
-
-            this.props.changeFieldValue('public_key', public_key);
-            this.props.changeFieldValue('private_key', private_key);
-            this.props.changeFieldValue('seed', seed);
-            event.preventDefault();
-        } else if (seed && raiBlocksGenerator._isValidSeed(seed)) {
-            const private_key = raiBlocksGenerator.generatePrivateKey(seed);
-            const public_key = raiBlocksGenerator.generatePublicKey(seed);
-
-            this.props.changeFieldValue('public_key', public_key);
-            this.props.changeFieldValue('private_key', private_key);
-        } else if (seed && !raiBlocksGenerator._isValidSeed(seed)) {
-            // WRONG SEED...
-        }
-    }
-
-    xxx(seed, indexAccount) {
-        let raiBlocksGenerator = new RaiBlocksGenerator();
-        //let seed = this.props.formStates ? this.props.formStates.seed : undefined;
-        //let indexAccount = this.props.formStates ? this.props.formStates.index_account : undefined;
         if (raiBlocksGenerator._isValidSeed(seed) && raiBlocksGenerator._isValidIndexAccount(indexAccount)) {
             this.props.changeFieldValue('public_key', raiBlocksGenerator.generatePublicKey(seed, indexAccount));
             this.props.changeFieldValue('private_key', raiBlocksGenerator.generatePrivateKey(seed, indexAccount));
@@ -109,26 +99,26 @@ class Generator extends Component {
         }
     }
 
-    isPublicKeyFromSeed(seed, publicKey, index = 0) {
+    isPublicKeyFromSeed(seed, publicKey, indexAccount = 0) {
         const raiBlocksGenerator = new RaiBlocksGenerator();
         if (!seed) return false;
         if (!raiBlocksGenerator._isValidSeed(seed)) return false;
-        return raiBlocksGenerator.generatePublicKey(seed) === publicKey;
+        return raiBlocksGenerator.generatePublicKey(seed, indexAccount) === publicKey;
     }
 
-    isPrivateKeyFromSeed(seed, privateKey, index = 0) {
+    isPrivateKeyFromSeed(seed, privateKey, indexAccount = 0) {
         const raiBlocksGenerator = new RaiBlocksGenerator();
         if (!seed) return false;
         if (!raiBlocksGenerator._isValidSeed(seed)) return false;
-        return raiBlocksGenerator.generatePrivateKey(seed) === privateKey;
+        return raiBlocksGenerator.generatePrivateKey(seed, indexAccount) === privateKey;
     }
 
     maxIndexAccount = Math.pow(2, 32) - 1;
     required = value => (value ? undefined : 'Required');
     length64 = value => (value && value.length === 64 ? undefined : 'Seed must have exactly 64 characters! Total: ' + value.length);
     hexadecimal = value => (new RaiBlocksGenerator()._isHexadecimal(value) ? undefined : 'Just hexadecimal characters (0-9 or A-F)!');
-    validPublicKeyFromSeed = (value, allValues) => this.isPublicKeyFromSeed(allValues.seed, value) ? undefined : 'This public key is not compatible with the SEED! Insert a valid SEED and the public key will be generated automaticaly!';
-    validPrivateKeyFromSeed = (value, allValues) => this.isPrivateKeyFromSeed(allValues.seed, value) ? undefined : 'This private key is not compatible with the SEED! Insert a valid SEED and the private key will be generated automaticaly!';
+    validPublicKeyFromSeed = (value, allValues) => this.isPublicKeyFromSeed(allValues.seed, value, allValues.index_account) ? undefined : 'This public key is not compatible with the SEED! Insert a valid SEED and the public key will be generated automaticaly!';
+    validPrivateKeyFromSeed = (value, allValues) => this.isPrivateKeyFromSeed(allValues.seed, value, allValues.index_account) ? undefined : 'This private key is not compatible with the SEED! Insert a valid SEED and the private key will be generated automaticaly!';
     isInValidIndexAccountRange = value => (value >= 0 && value <= this.maxIndexAccount ? undefined : '0 - 4.294.967.295');
 
     renderInputForm() {
@@ -150,8 +140,9 @@ class Generator extends Component {
                             onChange={(event) => {
                                 let seed = event.target.value;
                                 let indexAccount = this.props.formStates ? this.props.formStates.index_account : undefined;
-                                this.xxx(seed, indexAccount);
+                                this.generateWallet(seed, indexAccount);
                             }}
+                            style={{textTransform: "uppercase"}}
                         />
                         <Field
                             name="index_account"
@@ -167,7 +158,7 @@ class Generator extends Component {
                             onChange={(event) => {
                                 let seed = this.props.formStates ? this.props.formStates.seed : undefined;
                                 let indexAccount = event.target.value;
-                                this.xxx(seed, indexAccount);
+                                this.generateWallet(seed, indexAccount);
                             }}
                         />
                     </Row>
@@ -196,9 +187,17 @@ class Generator extends Component {
                             warn={[this.validPublicKeyFromSeed]}
                             component={InputField}
                         />
+                        { this.renderBlockChainBalanceButton() }
                     </Row>
+                    <br/>
+                    <br/>
                     <div>
-                        <Button waves='light' className="orange" onClick={(event) => this.generateWallet(event)}>
+                        <Button waves='light' className="orange" onClick={(event) => {
+                            let seed = new RaiBlocksGenerator().generateSeed();
+                            let indexAccount = this.props.formStates ? this.props.formStates.index_account : undefined;
+                            this.generateWallet(seed, indexAccount);
+                            event.preventDefault();
+                        }}>
                             <Icon left>gesture</Icon>
                             Generate a random wallet now!
                         </Button>
