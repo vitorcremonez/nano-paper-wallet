@@ -132,7 +132,8 @@ class Generator extends Component {
                             name="seed"
                             type="text"
                             icon="lock"
-                            s={10}
+                            s={12}
+                            m={10}
                             label="Seed (Top Secret)"
                             placeholder={"0000000000000000000000000000000000000000000000000000000000000000"}
                             validate={[this.required, this.hexadecimal, this.length64]}
@@ -148,7 +149,8 @@ class Generator extends Component {
                             name="index_account"
                             type="number"
                             icon="format_list_numbered"
-                            s={2}
+                            s={12}
+                            m={2}
                             label="Account Number"
                             placeholder={"0"}
                             min={0}
