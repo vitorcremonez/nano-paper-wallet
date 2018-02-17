@@ -12,6 +12,9 @@ class Tutorial extends Component {
                 <h6 className="color-nano-gray">
                     Client side generator. All functions of paper wallet generator is runned in client side to help keep your new paper wallet far from another people.
                 </h6>
+                <h6 className="color-nano-gray">
+                    Transactions will have "Pending Deposit" status until be mined in a wallet.
+                </h6>
                 <br/>
                 <h5>
                     <b>Intructions:</b>
@@ -40,7 +43,8 @@ class Tutorial extends Component {
                     <ol>
                         <li>Access Paper the Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                         <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
-                        <li>Add your <Icon>lock</Icon> Seed, <Icon>account_balance_wallet</Icon> Account and <Icon>call_received</Icon> Public key.</li>
+                        <li>Add your <Icon>lock</Icon> Seed and <Icon>format_list_numbered</Icon> Account Number (Default <b>0</b>).</li>
+                        <li><Icon>account_balance_wallet</Icon> Private Key and <Icon>call_received</Icon> Public key is generated automatically.</li>
                         <li>Click in "<Icon>note_add</Icon> Create your paper wallet".</li>
                         <li>Click in "<Icon>print</Icon> Print your paper wallet".</li>
                         <li>Close <Icon>close</Icon> the browser and restart computer.</li>
