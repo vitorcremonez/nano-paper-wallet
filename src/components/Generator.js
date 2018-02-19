@@ -13,6 +13,7 @@ import {
 } from 'redux-form';
 import {connect} from 'react-redux';
 import PaperWallet from "./PaperWallet";
+import BlockChainLinker from './BlockChainLinker';
 import RaiBlocksGenerator from '../helpers/RaiBlocksGenerator';
 import InputField from '../helpers/Field';
 
@@ -42,6 +43,8 @@ class Generator extends Component {
                              indexAccount={this.state.index_account}
                              art={this.props.arts[this.state.art]}/>
                 <br/>
+                <BlockChainLinker publicKey={this.state.public_key}/>
+                <br/>
                 <div>
                     <img src={this.props.arts['nanoDarkBlue'].art} width={100}
                          onClick={() => this.setState({art: "nanoDarkBlue"})}
@@ -57,21 +60,6 @@ class Generator extends Component {
                         Print your paper wallet
                     </Button>
                 </div>
-            </div>
-        );
-    }
-
-    renderBlockChainBalanceButton() {
-        if(!this.props.formStates || this.props.formStates.public_key === undefined ) {
-            return null;
-        }
-        return (
-            <div>
-                <a href={'https://raiblocks.net/account/index.php?acc=' + this.props.formStates.public_key} target="_blank">
-                    Check this account balance on the blockchain!
-                </a>
-                <br/>
-                <label>{this.props.formStates.public_key}</label>
             </div>
         );
     }
@@ -113,19 +101,22 @@ class Generator extends Component {
         return raiBlocksGenerator.generatePrivateKey(seed, indexAccount) === privateKey;
     }
 
-    maxIndexAccount = Math.pow(2, 32) - 1;
+    maxIndexAccount = 15;
     required = value => (value ? undefined : 'Required');
-    length64 = value => (value && value.length === 64 ? undefined : 'Seed must have exactly 64 characters! Total: ' + value.length);
+    length64 = value => (value && value.length === 64 ? undefined : 'Seed must have exactly 64 characters (Do not choose an easy Seed)! Total: ' + value.length);
     hexadecimal = value => (new RaiBlocksGenerator()._isHexadecimal(value) ? undefined : 'Just hexadecimal characters (0-9 or A-F)!');
     validPublicKeyFromSeed = (value, allValues) => this.isPublicKeyFromSeed(allValues.seed, value, allValues.index_account) ? undefined : 'This public key is not compatible with the SEED! Insert a valid SEED and the public key will be generated automaticaly!';
     validPrivateKeyFromSeed = (value, allValues) => this.isPrivateKeyFromSeed(allValues.seed, value, allValues.index_account) ? undefined : 'This private key is not compatible with the SEED! Insert a valid SEED and the private key will be generated automaticaly!';
-    isInValidIndexAccountRange = value => (value >= 0 && value <= this.maxIndexAccount ? undefined : '0 - 4.294.967.295');
+    isValidIndexAccountRange = value => (value >= 0 && value <= this.maxIndexAccount ? undefined : 0 + ' - ' + this.maxIndexAccount);
+    isNumeric = value => (/^[0-9]{1,}$/i.test(value)) ? undefined : 'This is not a number';
 
     renderInputForm() {
         return (
             <div>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <label>The public key and private key is generated automatically based on the SEED!</label>
+                    <br/>
+                    <label>Usually the default account number is 0</label>
                     <br/><br/>
                     <Row>
                         <Field
@@ -155,7 +146,7 @@ class Generator extends Component {
                             placeholder={"0"}
                             min={0}
                             max={this.maxIndexAccount}
-                            validate={[this.isInValidIndexAccountRange]}
+                            validate={[this.isValidIndexAccountRange, this.isNumeric]}
                             component={InputField}
                             onChange={(event) => {
                                 let seed = this.props.formStates ? this.props.formStates.seed : undefined;
@@ -189,7 +180,7 @@ class Generator extends Component {
                             warn={[this.validPublicKeyFromSeed]}
                             component={InputField}
                         />
-                        { this.renderBlockChainBalanceButton() }
+                        <BlockChainLinker publicKey={this.props.formStates ? this.props.formStates.public_key : undefined}/>
                     </Row>
                     <br/>
                     <br/>
