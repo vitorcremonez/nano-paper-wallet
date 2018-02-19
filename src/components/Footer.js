@@ -9,7 +9,7 @@ class Footer extends Component {
                     Fork us on:
                     &nbsp;
                     <a href="https://github.com/vitorcremonez/nano-paper-wallet">
-                        Github
+                        GitHub
                     </a>
                 </div>
                 <div>

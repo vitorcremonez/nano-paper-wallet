@@ -8,11 +8,11 @@ class Tutorial extends Component {
         return (
             <div className="bg-nano-blue bg-logo-dark" style={{color: "white", padding: 16}}>
                 <h4>Make your Paper Wallet to Keep Your Nanos and Keys Safe.</h4>
-                <h5 className="color-nano-gray">Follow these simple steps to generate your Nano paper wallet in a safe place.</h5>
-                <h6 className="color-nano-gray">
+                <h5 className="color-gray">Follow these simple steps to generate your Nano paper wallet in a safe place.</h5>
+                <h6 className="color-gray">
                     Client side generator. All functions of paper wallet generator is runned in client side to help keep your new paper wallet far from another people.
                 </h6>
-                <h6 className="color-nano-gray">
+                <h6 className="color-gray">
                     Transactions will have "Pending Deposit" status until be mined in a wallet.
                 </h6>
                 <br/>
@@ -23,7 +23,7 @@ class Tutorial extends Component {
                 <h6>
                     <b>Creating a <Icon>security</Icon> cold wallet and printing it:</b>
                 </h6>
-                <div className="color-nano-gray">
+                <div className="color-gray">
                     <ol>
                         <li>Access Paper the Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                         <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
@@ -39,7 +39,7 @@ class Tutorial extends Component {
                 <h6>
                     <b>Generating your paper wallet by your own inputs:</b>
                 </h6>
-                <div className="color-nano-gray">
+                <div className="color-gray">
                     <ol>
                         <li>Access Paper the Wallet Generator in a new <Icon>visibility_off</Icon> Private Window in your browser.</li>
                         <li>Disconnect your <Icon>wifi</Icon> internet connection.</li>
