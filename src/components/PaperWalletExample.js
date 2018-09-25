@@ -18,7 +18,6 @@ class PaperWalletExample extends Component {
     ];
 
     getThumbnailContent = (item) => {
-        console.log(PaperWallet);
         return (
             <img src={item.thumbnail} style={{cursor:"pointer", maxWidth: 500, width: "100%"}}/>
         );

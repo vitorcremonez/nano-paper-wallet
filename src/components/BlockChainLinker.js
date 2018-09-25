@@ -7,7 +7,7 @@ class BlockChainLinker extends Component {
         }
         return (
             <div>
-                <a href={'https://raiblocks.net/account/index.php?acc=' + this.props.publicKey} target="_blank">
+                <a href={'https://www.nanode.co/account/' + this.props.publicKey} target="_blank">
                     Check this account balance on the blockchain!
                 </a>
                 <br/>
