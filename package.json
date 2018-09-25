@@ -1,6 +1,7 @@
 {
   "name": "nano-paper-wallet",
-  "version": "3.0.1",
+  "homepage": ".",
+  "version": "3.0.2",
   "private": true,
   "dependencies": {
     "blake2b": "^2.1.2",
