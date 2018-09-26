@@ -95,7 +95,6 @@ class Generator extends Component {
     generateWallet = (seed, index) => {
         let raiBlocksGenerator = new RaiBlocksGenerator();
         if (nanocurrency.checkSeed(seed) && raiBlocksGenerator._isValidIndexAccount(index)) {
-            console.log(seed, index);
             const secret_key = nanocurrency.deriveSecretKey(seed, index);
             const public_key = nanocurrency.derivePublicKey(secret_key);
             const address = nanocurrency.deriveAddress(public_key);
@@ -176,7 +175,6 @@ class Generator extends Component {
                             onChange={(event) => {
                                 const seed = event.target.value;
                                 const index = this.props.formStates ? parseInt(this.props.formStates.index) : undefined;
-                                console.log(seed, index);
                                 const wallet = this.generateWallet(seed, index);
                                 this.updateForm(wallet);
                             }}
@@ -260,7 +258,6 @@ class Generator extends Component {
     }
 
     renderGenerator() {
-        console.log('xxx', this.state);
         if (this.state.seed && this.state.index!==null && this.state.secret_key && this.state.address) {
             return this.renderPaperWallet();
         } else {
