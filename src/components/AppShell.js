@@ -7,7 +7,7 @@ class AppShell extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            version: "3.0.3",
+            version: "3.1.0",
         };
     }
 

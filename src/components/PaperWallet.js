@@ -23,7 +23,7 @@ class PaperWallet extends Component {
                     fontSize: this.props.art.public_key.fontSize,
                     lineHeight: this.props.art.public_key.lineHeight,
                 }}>
-                    { this.props.publicKey }
+                    { this.props.publicAddress }
                 </div>
                 <div className="public-key-qr-code" style={{
                     width: this.props.art.public_key_qr.width,
@@ -35,7 +35,7 @@ class PaperWallet extends Component {
                         bgColor="#FFFFFF"
                         fgColor="#000000"
                         level="Q"
-                        value={ this.props.publicKey }
+                        value={ this.props.publicAddress }
                     />
                 </div>
                 <div className="seed-qr-code" style={{
@@ -72,17 +72,17 @@ class PaperWallet extends Component {
                         <b>Nano Paper Wallet</b>
                     </div>
                     <div className="left-align" style={{fontSize: 11}}>
-                        <div>- Do not reveal the private key and seed to anyone.</div>
-                        <div>- Verify your balance by searching for the public address using a service such as raiblocks.net</div>
-                        <div>- To withdraw and receive the funds sync the paper wallet with your seed into official desktop wallet (Make sure wallet is open and all blocks are downloaded).</div>
+                        <div>- Do not reveal your secret key or seed to anyone.</div>
+                        <div>- Verify your balance searching for the public address using services such as nanode.co</div>
+                        <div>- To withdraw and receive the funds sync the paper wallet with your seed into official desktop wallet (Make sure wallet is open and all blocks are downloaded). Or any other trusted wallet.</div>
                         <br/>
                         <div className="responsive-text">
-                            Account Number: <b>{ this.props.indexAccount }</b>
+                            Account Index: <b>{ this.props.index }</b>
                         </div>
                         <br/>
                         <div className="responsive-text">
-                            Private key:<br/>
-                            { this.props.privateKey }
+                            Secret Key:<br/>
+                            { this.props.secretKey }
                         </div>
                         <br/>
                         <div>Notes:</div>
